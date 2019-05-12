@@ -10,7 +10,7 @@
 
 pids=`pidof $1`
 
-read -p "Are you sure to kill $pids? (Y/N) " -n 1 -r
+read -p "Are you sure to kill $pids? (Y/N) " -n 1 -r # прочитать ответ пользователя; -r - do not allow backslashes to escape any characters; -n 1 - вернуть значение после считывания 1 символа
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then

@@ -12,7 +12,7 @@
 
 # Запуск: ./11.sh time или ./11.sh stat или ./11.sh stat '/usr/sbin/apache2'
 
-processes=`ps aux --sort=$1`
+processes=`ps aux --sort=$1` #ps - report a snapshot of the current processes; a - all processes, u - фильтр по имени/id пользователя, x - процессы, отсоединенные от терминала, сортировать по первому аргументу
 
 if [ $2 ]
 then

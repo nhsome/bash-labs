@@ -19,20 +19,20 @@ outputDir="9output/"
 
 if [ $1 ]
 then
-	directory=`readlink -f $1`
+	directory=`readlink -f $1` # -f - следовать пути в аргументе
 else
 	directory=`pwd`
 fi
 
-size=`du --summarize "$directory"`
+size=`du --summarize "$directory"`# --summarize - показывать только общую сумму объекта; du = disk usage
 size="${size%	*}"
 
-directoryHash=`echo -n $directory | shasum`
-directoryHash="${directoryHash%  -*}"
+directoryHash=`echo -n $directory | shasum` #shasum - вычислить хэш-сумму; -n - не выводить перевод строки
+directoryHash="${directoryHash%  -*}" # убираем всё, кроме хэша
 
 filePath=$outputDir$directoryHash
 
-if [ -f "$filePath" ]
+if [ -f "$filePath" ] # проверить наличие файла, если есть - then
 then
 	sizeBefore=`cat $filePath`
 	echo "Size before: $sizeBefore"

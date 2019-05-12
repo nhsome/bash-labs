@@ -17,7 +17,7 @@ concat=$1
 shift
 for arg in "$@"
 do
-	concat=$concat"\|"$arg
+	concat=$concat"\|"$arg # объединяем в стринг через |
 done
 echo $concat
 ps aux | grep "$concat"
