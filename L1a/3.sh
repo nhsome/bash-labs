@@ -15,7 +15,7 @@ shift # «убираем» первый аргумент, то есть тепе
 
 for arg in "$@"
 do
-	filename=$(basename $arg)
+	filename=$(basename $arg) # получить название файла без пути
 	newfilename="${filename%.*}.$extn"
-	mv $arg $(dirname $arg)/$newfilename
+	mv $arg $(dirname $arg)/$newfilename # изменить имя файла; dirname $arg берёт путь из нужного аргумента
 done
