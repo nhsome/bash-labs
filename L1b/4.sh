@@ -14,13 +14,13 @@
 
 # Запуск: ./4.sh 4test/
 
-directory=${1:-.}
-directory=${directory%/} #remove last slash
+directory=${1:-.} # для директории использовать первый аргумент, если нет, то .
+directory=${directory%/} # убрать последний slash
 echo "Directory: $directory"
 
-IFS=$'\n'
+IFS=$'\n' # IFS = internal field separator, здесь назначается новая строка вместо дефолтного пробела
 for mask in `cat 4.masks`; do
     echo "Mask: $mask"
-    rm -i $directory/$mask
+    rm -i $directory/$mask # -i - выводить запрос на подтверждение каждой операции удаления
 done
-exit 0
+exit 0 # выход из скрипта с удачным завершением
