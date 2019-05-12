@@ -12,5 +12,5 @@
 
 for arg in "$@"
 do
-	iconv -f 'CP1251' -t 'UTF8' -o $arg $arg
+	iconv -f 'CP1251' -t 'UTF8' -o $arg $arg # -f = from, -t = to, -o = output (в какой файл положить)
 done
