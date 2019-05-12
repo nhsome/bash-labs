@@ -27,7 +27,7 @@ do
 	cp $arg $tempDir
 done
 
-archiveExtn=${archiveName#*.}
+archiveExtn=${archiveName#*.} # получаем расширение
 
 case "$archiveExtn" in
 	zip)
