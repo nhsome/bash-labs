@@ -9,9 +9,10 @@
 #Запуск: source ./1.sh /var/www/
 
 concat=""
-for arg in "$@"
+# получаем директории из запуска, записываем в стринг concat через :, так как в PATH адреса директорий разделяются :
+for arg in "$@"  # $@ — так как цикл по аргументам, то есть эта конструкция позволяет считывать аргументы поштучно
 do
 	concat="$concat:$arg"
 done
 
-export PATH="$PATH$concat"
+export PATH="$PATH$concat" # записываем в PATH
