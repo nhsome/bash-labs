@@ -23,7 +23,7 @@ commandHash=`echo -n $command | shasum`
 commandHash="${commandHash%  -*}"
 
 filePath=$outputDir$commandHash
-data=`ps aux | grep $command | head -1`
+data=`ps aux | grep $command | head -1` # head -1 = напечатать первый символ из начала
 data=($data)
 data=`date`' '${data[9]}' '${data[10]}
 
