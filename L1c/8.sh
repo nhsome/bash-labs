@@ -15,8 +15,8 @@
 for arg in "$@"
 do
 	echo "Before:"
-	ls -l $arg
-	chmod 771 $arg
+	ls -l $arg # -l - long listing format (тип, права, кол-во ссылок, группа, размер, время, имя)
+	chmod 771 $arg # -,rwx,rwx,--x file(-)/dir(d), owner, group, other
 	echo "After:"
 	ls -l $arg
 done
