@@ -24,7 +24,7 @@ else
 	directory=`pwd`
 fi
 
-size=`du --summarize "$directory"`
+size=`du --summarize "$directory"`# --summarize - показывать только общую сумму объекта; du = disk usage
 size="${size%	*}"
 
 directoryHash=`echo -n $directory | shasum` #shasum - вычислить хэш-сумму; -n - не выводить перевод строки
