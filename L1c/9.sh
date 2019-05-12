@@ -28,7 +28,7 @@ size=`du --summarize "$directory"`
 size="${size%	*}"
 
 directoryHash=`echo -n $directory | shasum` #shasum - вычислить хэш-сумму; -n - не выводить перевод строки
-directoryHash="${directoryHash%  -*}"
+directoryHash="${directoryHash%  -*}" # убираем всё, кроме хэша
 
 filePath=$outputDir$directoryHash
 
