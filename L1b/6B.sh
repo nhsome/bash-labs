@@ -15,7 +15,7 @@ case "$archiveExtn" in
 		unzip $1
 		;;
 	tar.bz2)
-		tar xvjf $1
+		tar xvjf $1 # -x - распаковать, -v - verbose, показывать инф-ю, -j - распакова bz2
 		;;
 	*)
 		echo "Архивный формат не распознан."

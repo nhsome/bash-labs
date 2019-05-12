@@ -18,7 +18,7 @@
 archiveName=$1
 shift
 
-tempDir="${archiveName%%.*}"
+tempDir="${archiveName%%.*}"  # название tempDir = название архива без расширения(й)
 
 mkdir $tempDir
 
@@ -27,18 +27,18 @@ do
 	cp $arg $tempDir
 done
 
-archiveExtn=${archiveName#*.}
+archiveExtn=${archiveName#*.} # получаем расширение
 
 case "$archiveExtn" in
 	zip)
-		zip -r $archiveName $tempDir
+		zip -r $archiveName $tempDir # -r - архивация папки
 		;;
 	tar.bz2)
-		tar cjf $archiveName $tempDir
+		tar cjf $archiveName $tempDir # c - создать новый архив, j - для bz2, f - обозначить имя архива
 		;;
 	*)
 		echo "Архивный формат не распознан."
 		;;
 esac
 
-rm -rf $tempDir
+rm -rf $tempDir # -rf - удаляем каталог (-r) без запроса подтверждения (-f)
