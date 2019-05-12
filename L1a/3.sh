@@ -10,12 +10,12 @@
 
 #Запуск: ./3.sh newextn test_extn/t.txt test_extn/t2.fo.hi test_extn/t3 test_extn/t4.
 
-extn=$1
-shift
+extn=$1 # берём первый аргумент (в примере запуска это newextn) — это будет наше расширение
+shift # «убираем» первый аргумент, то есть теперь под $1 понимаем первый файл, а не расширение
 
 for arg in "$@"
 do
-	filename=$(basename $arg)
+	filename=$(basename $arg) # получить название файла без пути
 	newfilename="${filename%.*}.$extn"
-	mv $arg $(dirname $arg)/$newfilename
+	mv $arg $(dirname $arg)/$newfilename # изменить имя файла; dirname $arg берёт путь из нужного аргумента
 done
