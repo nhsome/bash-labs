@@ -23,9 +23,9 @@ commandHash=`echo -n $command | shasum`
 commandHash="${commandHash%  -*}"
 
 filePath=$outputDir$commandHash
-data=`ps aux | grep $command | head -1` # head -1 = напечатать первый символ из начала
+data=`ps aux | grep $command | head -1` # head -1 = напечатать первую строку из начала
 data=($data)
-data=`date`' '${data[9]}' '${data[10]}
+data=`date`' '${data[9]}' '${data[10]} # оставляем текущий временной штамп и величину процессорного времени
 
 if [ -f "$filePath" ]
 then
