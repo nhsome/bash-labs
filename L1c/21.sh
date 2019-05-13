@@ -7,4 +7,4 @@
 # (начинаться с /). Параметр: имя директории.
 
 read -p "Write Directory: " dir
-ls -lR $dir | sort -k 1
+ls -lR $dir | sort -k 1 # -I - ignore pattern, -R - рекурсивно отобразить подпапки, -k - сортировать по ключу 1 (по первому столбцу)
