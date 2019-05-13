@@ -6,4 +6,4 @@
 
 # ./20.sh 20test/ 20test/test
 
-find -L $1 -samefile $2
+ls -ls `find -L $1 -samefile $2`
