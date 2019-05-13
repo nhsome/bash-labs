@@ -9,4 +9,4 @@
 # выполняется в текущей директории.
 
 directory=${1:-.}
-find $directory -type f -printf '%T+ %p\n' | sort -n | tail -1
+find $directory -type f -printf '%T+ %p\n' | sort -n | tail -1  # -printf '%T+ %p\n' - выводить построчно время+название файла, sort -n - сортировать в порядке возрастания, tail -1 - показать одно последнее

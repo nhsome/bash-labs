@@ -11,6 +11,6 @@
 echo "Name directory:" 
 pwd 
 echo "Count files:" 
-find . ! -type f | wc -l 
+find . ! -type f | wc -l # ! - обеспечивает вывод необычных файлов, wc - команда для анализа файлов, -l - считает количество строк
 echo "Files:" 
 find . ! -type f -print

@@ -10,5 +10,5 @@
 #Запуск: source ./16.sh /var/www/
 
 directory=${1:-.}
-ls -lst $directory
+ls -lst $directory # -s - размер в блоках, -t - сортировка по времени, новые сверху
 cd $directory
