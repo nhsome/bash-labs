@@ -15,4 +15,4 @@ else
     export DIRPATH=`readlink -m $HOME`
 fi
 
-find $DIRPATH -type f -perm -011
+find $DIRPATH -type f -perm -011 # -perm - поиск файлов по режиму доступа
