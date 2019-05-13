@@ -11,7 +11,7 @@ read -p "Show symbolic link? Y/n " yn
 case $yn in
 [Yy]* )
 read -p "write directory: " dir
-find ${dir:-~/} -type l -ls | cut -f2- -d" "
+find ${dir:-~/} -type l -ls | cut -f2- -d" " # cut -f2- -d" " - вырезать (то есть взять) поле 2 с ограничителями " "
 ;;
 [Nn]* ) break;;
 

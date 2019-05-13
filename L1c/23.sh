@@ -17,4 +17,4 @@ if [[ $N == "no" ]]
 	then N=10
 fi
 echo "Showing "$N" biggest files:"
-find "$PWD" -type f | xargs ls --sort=size | head -n $N
+find "$PWD" -type f | xargs ls --sort=size | head -n $N # xargs - формирует список, xargs получила на вход команду ls с сортировкой, ограничение на показ по количеству

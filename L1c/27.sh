@@ -11,4 +11,4 @@
 
 #./27.sh "somethingelement.somthingelement.somethingelement"
 str=$1
-echo "$str" | awk 'BEGIN {FS="."}; { for (i=NF; i>1; i--) printf("%s.", $i); print $1; }'
+echo "$str" | awk 'BEGIN {FS="."}; { for (i=NF; i>1; i--) printf("%s.", $i); print $1; }' # awk позволяет выполнять некоторые команды прямо в терминале
